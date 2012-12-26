@@ -1,5 +1,13 @@
 HotelApp::Application.routes.draw do
  
+  get "counters/new"
+
+  get "counters/create"
+
+  get "counters/edit"
+
+  get "counters/show"
+
   get "taxes/new"
 
   get "taxes/edit"

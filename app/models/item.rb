@@ -10,7 +10,7 @@
 #
 
 class Item < ActiveRecord::Base
-  attr_accessible :item_name, :price, :category_id, :description, :attachments_attributes
+  attr_accessible :item_name, :price, :category_id,:counter_id, :description, :attachments_attributes
 
   #has_many :customers, :through=>:orders, :dependent=>:destroy
   has_many :orders, :through=>:orderlists
@@ -18,4 +18,5 @@ class Item < ActiveRecord::Base
   has_many :orderlists
   has_many :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
+  belongs_to :counters
 end
