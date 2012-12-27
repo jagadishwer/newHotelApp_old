@@ -31,13 +31,16 @@
       <!--Sidebar content-->
       <%if user_signed_in?%>
 
-  <ul class="nav nav-pills nav-stacked" style="margin-top:100px;padding:10px">
+  <ul class="nav nav-pills nav-stacked" style="margin-top:80px;padding:10px">
     <li><%=link_to "Dashboard",'/hotelsessions/dashboard',:class=>"btn-large btn-warning"%></li>
 <%#=link_to "Add Tables", {:controller=>'tables',:action=>'new'},:class=>'btn btn-warning'%>
  <li><%=link_to_modal "Tables", '/tables/new',:class=>'btn-large btn-info'%></li>
 <li><%=link_to "Tax", '/taxes/show',:class=>'btn-large btn-success'%></li>
-<li><%=link_to "Counter",'/counters/show',:class=>"btn-large btn-info"%></li>
-   <li><%=link_to "Categories",'/categories/show',:class=>'btn-large btn-success'%></li>
+
+   <li><%=link_to "Categories",'/categories/show',:class=>'btn-large btn-success'%>
+   <%#=link_to "Counter",'/counters/show',:class=>"btn-large btn-info"%>
+<%=link_to "Main Counter",'/counters/main_counter',:class=>"btn-large btn-info" %></li>
+<li> <%=link_to "Other Counter",'/counters/other_counter',:class=>"btn-large btn-info" %></li>
  <li><%=link_to "Items",'/items/show',:class=>'btn-large btn-info'%></li>
  <%#=link_to "Add Tax", {:controller=>'tables',:action=>'new'},:class=>'btn btn-warning'%>
 
@@ -55,7 +58,7 @@
 
 <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete,:class=>"btn-large btn-danger" %></li>
 <li>&nbsp;</li>
-<li><%= link_to "API Description", '/pages/api', :class => "btn-large btn-primary" %></li>
+<li><%#= link_to "API Description", '/pages/api', :class => "btn-large btn-primary" %></li>
 
      </ul>
        <%end%>
