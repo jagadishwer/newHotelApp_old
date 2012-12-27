@@ -1,6 +1,6 @@
 class StockListItemsController < ApplicationController
   #/stock_list_items/create.json,{:name=>"<item_name>"}
-  load_and_authorize_resource
+  #load_and_authorize_resource
   def create
     @stli= StockListItem.new(:name=>params[:name])
     respond_to do|format|

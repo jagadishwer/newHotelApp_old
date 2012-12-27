@@ -17,11 +17,15 @@ class CountersController < ApplicationController
   end
 
   def show
-    @counters=Counter.all
+    @counters=Counter.find(:all, :conditions=>"name!='main_counter'")
   end
   def update
     @counter = Counter.find(params[:counter][:id])
     @counter.update_attributes(params[:counter])
     redirect_to :action=>'show'
+  end
+  def main_counter
+  end
+  def other_counter
   end
 end

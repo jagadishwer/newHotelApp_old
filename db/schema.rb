@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226074650) do
+ActiveRecord::Schema.define(:version => 20121227091659) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -189,6 +189,13 @@ ActiveRecord::Schema.define(:version => 20121226074650) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "swipe_cards", :force => true do |t|
+    t.string   "card_no"
+    t.float    "balance"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tables", :force => true do |t|
     t.integer "table_name"
   end
@@ -198,6 +205,16 @@ ActiveRecord::Schema.define(:version => 20121226074650) do
     t.float    "percentage"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "swipe_card_id"
+    t.string   "counter_id"
+    t.string   "cost"
+    t.integer  "type_of_transaction"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.float    "balance"
   end
 
   create_table "users", :force => true do |t|

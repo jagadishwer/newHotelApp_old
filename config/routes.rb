@@ -1,5 +1,13 @@
 HotelApp::Application.routes.draw do
  
+  get "transactions/show"
+
+  get "swipe_cards/new"
+
+  get "swipe_cards/edit"
+
+  get "swipe_cards/show"
+
   get "counters/new"
 
   get "counters/create"
