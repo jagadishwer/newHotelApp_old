@@ -1,0 +1,29 @@
+<div id="myDiv">
+<div>
+  <h2><%= @counter.name %> Items</h2>
+</div>
+<div style="width: 600px;height:800px; background-color:white;margin-bottom: 50px;float: left;margin-left: 30px;overflow: scroll;">
+<% @items.each do |i| %>
+<ul class ="thumbnails" id = "ulthumbs">
+  <div>
+  <li class="thumbnail" style="width:120px; height:120px; line-height:120px;">
+    <%= link_to(image_tag i.attachments.shuffle.first.image_url)%>
+  </li>
+  <p><%=  i.item_name %></p>
+  </div>
+</ul>
+<% end %>
+</div>
+<div style="width: 400px;height:800px; background-color:white;margin-bottom: 50px;float: left;margin-left: 30px;overflow: scroll;">
+      <table class="table table-bordered">
+        <tr style="background-color:blanchedalmond; ">
+          <td>Item</td>
+          <td>Quantity </td>
+          <td>Unit Price</td>
+          <td>Total Price</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+</div>

@@ -25,7 +25,20 @@ class CountersController < ApplicationController
     redirect_to :action=>'show'
   end
   def main_counter
+<<<<<<< HEAD
   end
   def other_counter
   end
+=======
+
+  end
+  def other_counter
+    
+  end
+  def counter_items
+    @counter = Counter.find_by_id(params[:counter][:counter_id])
+    @items = @counter.items
+  end
+  
+>>>>>>> fbad6937242025178b12c0020af19370c636142d
 end
