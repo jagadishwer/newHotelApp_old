@@ -24,4 +24,15 @@ class CountersController < ApplicationController
     @counter.update_attributes(params[:counter])
     redirect_to :action=>'show'
   end
+  def main_counter
+
+  end
+  def other_counter
+    
+  end
+  def counter_items
+    @counter = Counter.find_by_id(params[:counter][:counter_id])
+    @items = @counter.items
+  end
+  
 end
