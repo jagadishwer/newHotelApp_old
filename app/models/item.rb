@@ -18,5 +18,5 @@ class Item < ActiveRecord::Base
   has_many :orderlists
   has_many :attachments, :as => :attachable, :dependent => :destroy
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-  belongs_to :counter
+  belongs_to :counters
 end
