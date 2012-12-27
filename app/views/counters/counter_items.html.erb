@@ -2,12 +2,12 @@
 <div>
   <h2><%= @counter.name %> Items</h2>
 </div>
-<div style="width: 600px;height:800px; background-color:white;margin-bottom: 50px;float: left;margin-left: 30px;overflow: scroll;">
+<div style="width: 400px;height:800px; background-color:white;margin-bottom: 50px;float: left;margin-left: 30px;overflow: scroll;">
 <% @items.each do |i| %>
 <ul class ="thumbnails" id = "ulthumbs">
   <div>
   <li class="thumbnail" style="width:120px; height:120px; line-height:120px;">
-    <%= link_to(image_tag i.attachments.shuffle.first.image_url)%>
+    <%= link_to_modal (image_tag i.attachments.shuffle.first.image_url),{:controller=>'orderlists',:action=>'new',:id=>i.id,:price=>i.price}%>
   </li>
   <p><%=  i.item_name %></p>
   </div>
@@ -16,13 +16,18 @@
 </div>
 <div style="width: 400px;height:800px; background-color:white;margin-bottom: 50px;float: left;margin-left: 30px;overflow: scroll;">
       <table class="table table-bordered">
-        <tr style="background-color:blanchedalmond; ">
-          <td>Item</td>
-          <td>Quantity </td>
-          <td>Unit Price</td>
-          <td>Total Price</td>
-          <td></td>
-          <td></td>
+        <tr style="background-color:#ffcccc; ">
+          <td>Item</td><td>Quantity </td><td>Unit Price</td><td>Total Price</td>
+        </tr>
+        <%@sum=0%>
+        <%if !@order_lists.empty?%>
+        <%@order_lists.each do |ol|%>
+        <tr>
+          <td><%=ol.itemname%></td><td><%=ol.quantity%></td><td><%=ol.price%></td><td><%@sum+=ol.quantity*ol.price%><%=ol.quantity*ol.price%></td>
+        </tr>
+        <%end%>
+        <%end%>
+        <tr style="background-color:#cccccc; "><td></td><td>TOTAL</td><td></td><td><%=@sum%></td>
         </tr>
       </table>
   </div>

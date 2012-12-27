@@ -1,6 +1,26 @@
 class OrderlistsController < ApplicationController
- # load_and_authorize_resource
-  def cancelrequest
+ def new
+   
+  @orderlist=Orderlist.new()
+  @id=params[:id]
+  @price=params[:price]
+ end
+ def create
+ @order=Orderlist.new(:counter_id=>session[:counter],:item_id=>params[:orderlist][:id],:quantity=>params[:orderlist][:quantity],:price=>params[:orderlist][:price])
+ if @order.save
+   redirect_to :action=>:counter_items,:controller=>:counters
+ else
+ end
+ end
+
+
+
+
+
+
+
+# load_and_authorize_resource
+def cancelrequest
 
 puts"=================="
 puts params.inspect
@@ -22,9 +42,8 @@ puts params.inspect
        
           
     end
-
-
   end
+
   def destroy
 
     ol=Orderlist.find(params[:id])

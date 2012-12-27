@@ -28,12 +28,20 @@ class CountersController < ApplicationController
 
   end
   def other_counter
+    session[:counter]=nil
   end
 
   
   def counter_items
+    if session[:counter].nil?
     @counter = Counter.find_by_id(params[:counter][:counter_id])
+    session[:counter]=params[:counter][:counter_id]
+    else
+      @counter=Counter.find_by_id(session[:counter])
+    end
     @items = @counter.items
+   @order_lists=Orderlist.find(:all,:conditions=>{:counter_id=>session[:counter],:order_id=>nil})
+
   end
   
 
