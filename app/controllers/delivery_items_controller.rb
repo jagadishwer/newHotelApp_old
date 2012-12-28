@@ -1,5 +1,5 @@
 class DeliveryItemsController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
   def new
     #@delivery=DeliveryItem.new()
     @stlis= StockListItem.find(:all)

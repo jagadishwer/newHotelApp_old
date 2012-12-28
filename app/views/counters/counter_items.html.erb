@@ -1,3 +1,8 @@
+<style>
+  .btn-large{
+    height:100px;
+}
+  </style>
 <div id="myDiv">
 <div>
   <h2><%= @counter.name %> Items</h2>
@@ -30,5 +35,10 @@
         <tr style="background-color:#cccccc; "><td></td><td>TOTAL</td><td></td><td><%=@sum%></td>
         </tr>
       </table>
+  <div>
+  <%=link_to "Confirm Order", "#",:class=>'thumbnail btn btn-success', :style=>'height: 50px;
+line-height: 50px;'%><%=link_to "Cancel Order", "#",:class=>'thumbnail btn btn-danger',:style=>'height: 50px;
+line-height: 50px;'%>
   </div>
+</div>
 </div>

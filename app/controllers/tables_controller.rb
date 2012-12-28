@@ -1,5 +1,5 @@
 class TablesController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
   def new
     @table = Table.new
     @p_table=Table.find(:last)

@@ -1,6 +1,6 @@
 class StockCountsController < ApplicationController
   #/stock_counts/create.json,{:stock_list_item_id=>"1,2",:mrp=>"12.2,13.5",:quantity=>"3,4"}
-  load_and_authorize_resource
+  #load_and_authorize_resource
   def create
     @stock_list_item_ids=params[:stock_list_item_id].split(",")
     @mrps=params[:mrp].split(",")
