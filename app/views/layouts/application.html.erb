@@ -39,9 +39,11 @@
 
    <li><%=link_to "Categories",'/categories/show',:class=>'btn-large btn-success'%>
    <%#=link_to "Counter",'/counters/show',:class=>"btn-large btn-info"%>
-<%=link_to "Main Counter",'/counters/main_counter',:class=>"btn-large btn-info" %></li>
-<li> <%=link_to "Other Counter",'/counters/other_counter',:class=>"btn-large btn-info" %></li>
- <li><%=link_to "Items",'/items/show',:class=>'btn-large btn-info'%></li>
+   <li>
+  <%=link_to "Main Counter",'/counters/main_counter',:class=>"btn-small btn-info" %>
+  <%=link_to "Other Counter",'/counters/other_counter',:class=>"btn-small btn-info" %>
+   </li>
+   <li><%=link_to "Items",'/items/show',:class=>'btn-large btn-info'%></li>
  <%#=link_to "Add Tax", {:controller=>'tables',:action=>'new'},:class=>'btn btn-warning'%>
 
     <li><%=link_to "Kitchen",'/hotelsessions/show',:class=>"btn-large btn-success"%></li>
