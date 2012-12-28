@@ -53,4 +53,9 @@ puts params.inspect
     ol.destroy
     redirect_to :controller=>:hotelsessions, :action=>:show
   end
+  def cancel
+    ol=Orderlist.find(params[:id])
+       ol.destroy
+    redirect_to :controller=>'counters', :action=>'counter_items'
+  end
 end
