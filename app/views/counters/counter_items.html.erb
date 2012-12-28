@@ -36,8 +36,9 @@
         </tr>
       </table>
   <div>
-  <%=link_to "Confirm Order", "#",:class=>'thumbnail btn btn-success', :style=>'height: 50px;
-line-height: 50px;'%><%=link_to "Cancel Order", "#",:class=>'thumbnail btn btn-danger',:style=>'height: 50px;
+  <%=link_to_modal "Confirm Order", "/counters/confirm_order",:class=>'thumbnail btn btn-success', :style=>'height: 50px;
+line-height: 50px;'%>
+  <%=link_to "Cancel Order", "/counters/cancel_order",:class=>'thumbnail btn btn-danger', :confirm => "Are you sure?, the action cannot be undone!", :style=>'height: 50px;
 line-height: 50px;'%>
   </div>
 </div>
