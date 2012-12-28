@@ -43,6 +43,16 @@ class CountersController < ApplicationController
    @order_lists=Orderlist.find(:all,:conditions=>{:counter_id=>session[:counter],:order_id=>nil})
 
   end
+  def confirm_order
+    
+  end
+  def cancel_order
+    @order_lists=Orderlist.find(:all,:conditions=>{:counter_id=>session[:counter],:order_id=>nil})
+    @order_lists.each do |i|
+      i.destroy
+    end
+    redirect_to :controller => "counters", :action => "counter_items"
+  end
   
 
 end
